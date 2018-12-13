@@ -6,7 +6,7 @@
 
 char *my_strtok(char *str,const char *token);
 int main(){
-    char str[80] = "MY ORANGE JUICE";
+    char str[80] = "MY ORANGE CAKE";
     char *current;
     current = my_strtok(str," ");
     while(current != NULL){
@@ -23,12 +23,12 @@ char *my_strtok(char *str,const char *token){
     }
     while(tmp != NULL){
         start = tmp;
+	//원하는 토큰을 찾으면
         if(tmp == token){
 	    *tmp++='\0'; 
-	    //현재 포인터가 가르키는 곳에 '\0'넣고 그다음 포인터로 이동
+	    //현재 포인터가 가르키는 곳에 '\0'넣고 그다음 포인터로 이동, 값을 반환
 	    return start;}
 	*tmp++;
     }
-    if(*tmp == '\0') return NULL;
-    else return start;
+    if(*tmp == '\0') return NULL;//문장이 끝나면 null반환
 }
